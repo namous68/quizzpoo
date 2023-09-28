@@ -2,64 +2,111 @@
 
 class Question
 {
-    private string $texteQuestion;
-    private array $answers = [];
-    private string $explication;
+    private int $id_question;
+    private string $question;
+    private string $explanation;
 
-    public function __construct(string $texteQuestion)
+    private array $answers;
+
+    public function __construct(int $id_question, string $question, string $explanation, array $answers)
     {
-        $this->setTexteQuestion($texteQuestion);
+        $this->setId_question($id_question);
+        $this->setQuestion($question);
+        $this->setExplanation($explanation);
+        $this->setAnswers($answers);
     }
 
+
+
     /**
-     * Set the value of explication
+     * Set the value of explanation
      *
      * @return  self
-     */ 
-    public function setExplication(string $explication)
+     */
+    public function setExplanation(string $explanation)
     {
-        $this->explication = $explication;
+        $this->explanation = $explanation;
 
         return $this;
     }
 
     /**
-     * Set the value of texteQuestion
+     * Set the value of question
      *
      * @return  self
-     */ 
-    public function setTexteQuestion(string $texteQuestion)
+     */
+    public function setQuestion($question)
     {
-        $this->texteQuestion = $texteQuestion;
+        $this->question = $question;
 
         return $this;
     }
 
     /**
-     * Get the value of texteQuestion
-     */ 
-    public function getTexteQuestion()
+     * Get the value of question
+     */
+    public function getQuestion()
     {
-        return $this->texteQuestion;
+        return $this->question;
     }
-    
+
     /**
      * Get the value of answers
-     */ 
+     */
     public function getAnswers()
     {
         return $this->answers;
     }
 
-
     /**
-     * Add an answer to the array of Answer $answers
+     * Add an answer to the question
      */
-    public function addAnswer (Answer $answer){
+    public function addAnswer(Answer $answer)
+    {
         $this->answers[] = $answer;
     }
 
-    
 
-    
+
+
+
+    /**
+     * Get the value of id_question
+     */
+    public function getId_question()
+    {
+        return $this->id_question;
+    }
+
+    /**
+     * Set the value of id_question
+     *
+     * @return  self
+     */
+    public function setId_question(int $id_question)
+    {
+        $this->id_question = $id_question;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of explanation
+     */
+    public function getExplanation()
+    {
+        return $this->explanation;
+    }
+
+    /**
+     * Set the value of answers
+     *
+     * @return  self
+     */ 
+    public function setAnswers(array $answers)
+    {
+        $this->answers = $answers;
+
+        return $this;
+    }
 }
