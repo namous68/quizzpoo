@@ -1,28 +1,16 @@
 <?php
+
 class Answer
 {
-    private string $texteReponse;
+    private int $id_answer;
+    private string $answer;
     private bool $isCorrect;
 
-
-    // Ici nous disons que si aucune valeur n'est passé en paramètre pour 
-    // isCorrect alors il sera false par défaut
-    public function __construct(string $texteReponse, bool $isCorrect = false)
+    public function __construct(int $id_answer, string $answer, bool $isCorrect = false)
     {
-        $this->setTexteReponse($texteReponse);
-        $this->setIsCorrect($isCorrect);
-    }
-
-    /**
-     * Set the value of texteReponse
-     *
-     * @return  self
-     */ 
-    public function setTexteReponse(string $texteReponse)
-    {
-        $this->texteReponse = $texteReponse;
-
-        return $this;
+        $this->setId_answer($id_answer);
+        $this->setAnswer($answer);
+        $this->setIsCorrect($isCorrect);  
     }
 
     /**
@@ -38,10 +26,50 @@ class Answer
     }
 
     /**
-     * Get the value of texteReponse
+     * Set the value of answer
+     *
+     * @return  self
      */ 
-    public function getTexteReponse()
+    public function setAnswer($answer)
     {
-        return $this->texteReponse;
+        $this->answer = $answer;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of answer
+     */ 
+    public function getAnswer()
+    {
+        return $this->answer;
+    }
+
+    /**
+     * Get the value of id_answer
+     */ 
+    public function getId_answer()
+    {
+        return $this->id_answer;
+    }
+
+    /**
+     * Set the value of id_answer
+     *
+     * @return  self
+     */ 
+    public function setId_answer($id_answer)
+    {
+        $this->id_answer = $id_answer;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of isCorrect
+     */ 
+    public function getIsCorrect()
+    {
+        return $this->isCorrect;
     }
 }
